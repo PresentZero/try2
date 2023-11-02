@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat GPT</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Left Section */
+    .left-section {
+      width: 20%;
+      background-color: #34495E;
+      color: #ECF0F1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2C3E50;
+    }
+
+    button {
+      padding: 8px;
+      background-color: #2C3E50;
+      color: #ECF0F1;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #1F2C38;
+    }
+
+    .chats {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .chat {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .chat:hover {
+      background-color: #2C3E50;
+    }
+
+    .chat-icon {
+      margin-right: 10px;
+    }
+
+    .chat-title {
+      flex-grow: 1;
+    }
+
+    .edit-option {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    .edit-option:hover {
+      color: #3498DB;
+    }
+
+    .bottom-section {
+      margin-top: auto;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      background-color: #2C3E50;
+    }
+
+    .upward-icon {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .upward-icon:hover {
+      color: #3498DB;
+    }
+
+    .upgrade-text {
+      color: #3498DB;
+      cursor: pointer;
+      text-decoration: underline;
+      margin-right: 10px;
+    }
+
+    .profile-section {
+      margin-top: auto;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .profile-icon {
+      margin-right: 10px;
+    }
+
+    .username {
+      flex-grow: 1;
+    }
+
+    .three-dots {
+      cursor: pointer;
+    }
+
+    .three-dots:hover {
+      color: #3498DB;
+    }
+
+    /* Right Section */
+    .right-section {
+      flex-grow: 1;
+      background-color: #ECF0F1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-buttons {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 20%;
+      background-color: #BDC3C7;
+    }
+
+    .button {
+      padding: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #AAB7B8;
+    }
+
+    .electricity-icon,
+    .star-icon {
+      margin-bottom: 5px;
+    }
+
+    .gpt-version {
+      text-align: center;
+    }
+
+    .middle-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30%;
+      background-color: #D5D8DC;
+    }
+
+    .chat-gpt {
+      font-size: 36px;
+      color: #2C3E50;
+    }
+
+    .bottom-section-right {
+      margin-top: auto;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      background-color: #BDC3C7;
+    }
+
+    .send-message-bar {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #AAB7B8;
+      border-radius: 5px;
+    }
+
+    .send-button {
+      margin-left: 10px;
+      padding: 8px;
+      background-color: #3498DB;
+      color: #ECF0F1;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .send-button:hover {
+      background-color: #2980B9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Left Section -->
+  <div class="left-section">
+    <div class="header">
+      <button>New Chat</button>
+      <button>Hide</button>
+    </div>
+    <div class="chats">
+      <!-- Sample Chat -->
+      <div class="chat">
+        <div class="chat-icon">📱</div>
+        <div class="chat-title">Chat Title</div>
+        <div class="edit-option">✎</div>
+      </div>
+      <!-- Repeat the above chat block for additional chats -->
+    </div>
+    <div class="bottom-section">
+      <div class="upward-icon">⬆️</div>
+      <div class="upgrade-text">Upgrade to Plus</div>
+    </div>
+    <div class="profile-section">
+      <div class="profile-icon">👤</div>
+      <div class="username">Username</div>
+      <div class="three-dots">...</div>
+    </div>
+  </div>
+
+  <!-- Right Section -->
+  <div class="right-section">
+    <div class="top-buttons">
+      <div class="button">
+        <div class="electricity-icon">⚡</div>
+        <div class="gpt-version">GPT-3.5</div>
+      </div>
+      <div class="button">
+        <div class="star-icon">⭐</div>
+        <div class="gpt-version">GPT-4</div>
+      </div>
+    </div>
+    <div class="middle-section">
+      <div class="chat-gpt">Chat GPT</div>
+    </div>
+    <div class="bottom-section-right">
+      <input type="text" class="send-message-bar" placeholder="Type your message...">
+      <button class="send-button">Send</button>
+    </div>
+  </div>
+
+</body>
+</html>
